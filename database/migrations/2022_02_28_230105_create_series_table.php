@@ -15,15 +15,8 @@ return new class extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->longText('description')->nullable();
-            $table->string('image')->nullable();
-            $table->unsignedBigInteger('platforms_id');
+            $table->string('nome', 128);
             $table->timestamps();
-            //Foreign
-            $table->foreign('platforms_id')->references('id')->on('platforms');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
